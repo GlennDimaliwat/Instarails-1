@@ -2,13 +2,9 @@ class Photo < ApplicationRecord
   belongs_to :user
   mount_uploader :image, ImageUploader
   has_many :likes, class_name: 'PhotoLike'
-
-  # def liked_by?(user)
-  #   PhotoLike.where(photo: self, user: user).exists?
-  #   #likes.where(user: user).count > 0
-  # end
   has_and_belongs_to_many :likers, class_name: 'User', join_table: :likes
-  
+  has_many :comments
+
     def liked_by?(user)
       likers.exists?(user.id)
     end
