@@ -23,5 +23,6 @@
 <nav>
   <% if @photo.user == current_user %>
     <%= link_to 'Edit', edit_photo_path(@photo) %>
+    <%= link_to 'Comments', photo_comments_path(@photo) %>
   <% end %>
 </nav>

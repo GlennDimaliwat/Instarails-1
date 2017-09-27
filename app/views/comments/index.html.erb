@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<nav class="navbar">
+  <%= link_to 'Back', @photo %>
+  <h1>Comments</h1>
+</nav>
+
+<section>
+  <%= render @comments, photo: @photo %>
+  <%# @comments.each do |comment| %>
+    <%#= render 'comment', comment: comment, photo: @photo %>
+  <%# end %>
+</section>
+
+<%= render 'form', comment: @new_comment %>
